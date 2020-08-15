@@ -7,9 +7,11 @@
 
 import React from "react"
 import PropTypes from "prop-types"
+import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 
 import Header from "./header"
+import "../styles/style.css"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -24,7 +26,12 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      <Header siteTitle={data.site.siteMetadata.title} />
+      <Helmet
+        bodyAttributes={{
+          class: ''
+        }}
+      />
+      <Header />
       <div>
         <main>{children}</main>
         <footer>
