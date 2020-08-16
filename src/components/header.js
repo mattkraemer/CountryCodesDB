@@ -12,11 +12,14 @@ import Button from "react-bootstrap/Button"
 const Header = () => (
   <Navbar bg="transparent" variant="dark" expand="lg">
     <Container>
-      <Navbar.Brand href="#home">CountryCodesDB</Navbar.Brand>
+      <Navbar.Brand className="mr-0"><span className="font-weight-light">CountryCodes</span><span className="font-weight-normal">DB</span></Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
+        <Form className="w-100 mx-5">
+          <FormControl type="text" placeholder="Search for a Country..." className="w-100 border-0 shadow-lg" />
+        </Form>
         <Nav className="ml-auto">
-          <Navbar.Text>
+          <Navbar.Text className="text-truncate">
             Country Data for {Countries.length} Countries
           </Navbar.Text>
         </Nav>
