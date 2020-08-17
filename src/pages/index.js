@@ -16,6 +16,7 @@ const IndexPage = () => {
   return (
     <>
       <SEO title="Home" />
+      <span className="header-bg bg-primary" />
       <Navbar bg="transparent" variant="dark" expand="lg">
         <Container>
           <Navbar.Brand className="mr-0"><span className="font-weight-light">CountryCodes</span><span className="font-weight-normal">DB</span></Navbar.Brand>
@@ -40,8 +41,8 @@ const IndexPage = () => {
         <span>{Countries.length} Countries found.</span>
       </Container>
       <Container className="my-4">
-        <Table striped hover className="bg-white shadow-lg rounded-lg">
-          <thead>
+        <Table striped borderless className="bg-white shadow-lg rounded-lg">
+          <thead className="border-bottom">
             <tr>
               <th className="border-top-0">#</th>
               <th className="border-top-0">Country</th>

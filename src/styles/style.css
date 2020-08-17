@@ -1,5 +1,9 @@
-body {
-    background-image: url(../images/wave.svg);
-    background-repeat: no-repeat;
-    background-size: 350%;
+.header-bg {
+    z-index: -10;
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 257px;
 }
