@@ -12,7 +12,7 @@ import Container from "react-bootstrap/Container"
 import Table from "react-bootstrap/Table"
 
 const IndexPage = () => {
-  const [ query, setQuery ] = useState();
+  const [ query, setQuery ] = useState("");
   return (
     <>
       <SEO title="Home" />
@@ -32,7 +32,14 @@ const IndexPage = () => {
           </Navbar.Collapse>
         </Container>
       </Navbar>
-      <Container className="my-4">{query}
+      <Container className="my-2 text-light">
+        {
+          query &&
+            <span className="mr-3">Search for: <span className="font-weight-bold">{query}</span></span>
+        }
+        <span>{Countries.length} Countries found.</span>
+      </Container>
+      <Container className="my-4">
         <Table striped hover className="bg-white shadow-lg rounded-lg">
           <thead>
             <tr>
@@ -47,7 +54,9 @@ const IndexPage = () => {
           </thead>
           <tbody>
             {
-              Countries.map((country, index) => (
+              Countries.filter(function(entry) {
+                return entry.name.toUpperCase().indexOf(query.toUpperCase()) !== -1;
+              }).map((country, index) => (
                 <tr>
                   <td>{country["country-code"]}</td>
                   <td>{country["name"]}</td>
