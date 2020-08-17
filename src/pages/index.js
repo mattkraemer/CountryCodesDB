@@ -38,7 +38,11 @@ const IndexPage = () => {
           query &&
             <span className="mr-3">Search for: <span className="font-weight-bold">{query}</span></span>
         }
-        <span>{Countries.length} Countries found.</span>
+        <span>
+          {Countries.filter(function(entry) {
+            return entry.name.toUpperCase().indexOf(query.toUpperCase()) !== -1;
+          }).length} Countries found.
+        </span>
       </Container>
       <Container className="my-4">
         <Table striped borderless className="bg-white shadow-lg rounded-lg">
