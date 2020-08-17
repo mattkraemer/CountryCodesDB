@@ -73,6 +73,14 @@ const IndexPage = () => {
                 </tr>
               ))
             }
+            {
+              Countries.filter(function(entry) {
+                return entry.name.toUpperCase().indexOf(query.toUpperCase()) !== -1;
+              }).length == 0 &&
+                <div className="p-3">
+                  Nothing found.
+                </div>
+            }
           </tbody>
         </Table>
       </Container>
