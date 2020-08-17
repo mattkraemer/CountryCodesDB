@@ -10,7 +10,7 @@ import Form from "react-bootstrap/Form"
 import FormControl from "react-bootstrap/FormControl"
 import Container from "react-bootstrap/Container"
 import Table from "react-bootstrap/Table"
-import Button from "react-bootstrap/Button"
+import Toast from "react-bootstrap/Toast"
 
 const IndexPage = () => {
   const [ query, setQuery ] = useState("");
@@ -169,6 +169,9 @@ const IndexPage = () => {
           </tbody>
         </Table>
       </Container>
+      <Toast className="shadow-lg bg-dark text-light border-0" style={{position: "fixed", bottom: "1rem", right: "1rem"}}>
+        <Toast.Body>Mady by <a href="https://www.c1x.dev" className="text-light font-weight-bold" target="_blank">c1x.dev</a></Toast.Body>
+      </Toast>
     </>
   )
 }
