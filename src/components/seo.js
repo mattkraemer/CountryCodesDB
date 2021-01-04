@@ -52,6 +52,10 @@ function SEO({ description, lang, meta, title }) {
           content: `website`,
         },
         {
+          property: `og:image`,
+          content: `../images/countrycodesdb.png`,
+        },
+        {
           name: `twitter:card`,
           content: `summary`,
         },
