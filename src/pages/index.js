@@ -22,9 +22,9 @@ const IndexPage = () => {
     setSortedBy(val1)
     setOrder(order === "asc" ? "desc" : "asc")
     if (order === "asc") {
-      setCountries(countries.sort((a,b) => a.[val1].localeCompare(b.[val1])))
+      setCountries(countries.sort((a,b) => a[val1].localeCompare(b[val1])))
     } else if (order === "desc") {
-      setCountries(countries.sort((a,b) => b.[val1].localeCompare(a.[val1])))
+      setCountries(countries.sort((a,b) => b[val1].localeCompare(a[val1])))
     }
   }
 
